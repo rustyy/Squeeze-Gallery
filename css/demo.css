@@ -1,0 +1,48 @@
+/* line 1, demo.scss */
+body {
+  background: #ededed;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, demo.scss */
+#page {
+  background: #fff;
+  margin: 0 auto;
+  padding: 20px;
+  width: 900px;
+}
+
+/* line 19, demo.scss */
+code {
+  background: #ededed;
+  display: block;
+  padding: 20px;
+}
+
+/* line 25, demo.scss */
+table {
+  border: 1px solid #ededed;
+  border-collapse: collapse;
+}
+
+/* line 30, demo.scss */
+td {
+  border: 1px solid #ededed;
+  padding: 5px;
+}
+
+/* line 35, demo.scss */
+table tr:nth-child(2n) td {
+  background: #ededed;
+}
+
+/* Teaser css */
+/* line 40, demo.scss */
+.teaser {
+  background: #fff;
+  bottom: 10px;
+  left: 10px;
+  padding: 10px;
+}

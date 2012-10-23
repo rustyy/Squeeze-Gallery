@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Squeeze Gallery Demo</title>
+    <link type="text/css" href="css/demo.css" rel="stylesheet">
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.min.js"></script>
+    <script type="text/javascript" src="jquery.squeezeGallery.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slideshow').squeezeGallery();
+            $('.slideshow-2').squeezeGallery({
+                teaser: ".teaser"
+            });
+        });
+
+
+    </script>
+
+</head>
+<body>
+
+<div id="page">
+
+
+    <h1>Squeeze Gallery</h1>
+
+    <h2>1. Download jQuery</h2>
+
+    <h2>2. Download Squeeze Gallery</h2>
+
+    <h2>3. Examples</h2>
+
+    <h3>3.1 Simple implementation</h3>
+
+    <div class="slideshow">
+        <div class="slide">
+            <img src="images/1.jpg"/>
+        </div>
+        <div class="slide">
+            <img src="images/2.jpg"/>
+        </div>
+        <div class="slide">
+            <img src="images/3.jpg"/>
+        </div>
+        <div class="slide">
+            <img src="images/4.jpg"/>
+        </div>
+        <div class="slide">
+            <img src="images/5.jpg"/>
+        </div>
+    </div>
+
+    <h4>Description:</h4>
+    Simply wrap each slide to be shown with an element (e.g. div) an give it a class named "slide".
+    All slides need now to be wrapped with another HTML element with a class of your choice.
+
+    Your code may look like this:
+
+    <code>
+        &lt;div class="slideshow"&gt;<br/>
+        &nbsp;&nbsp;&lt;div class="slide"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/1.jpg"/&gt;<br/>
+        &nbsp;&nbsp;&lt;/div&gt;<br/>
+        &nbsp;&nbsp;&lt;div class="slide"><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/2.jpg"/&gt;<br/>
+        &nbsp;&nbsp;&lt;/div&gt;<br/>
+        &nbsp;&nbsp;&lt;div class="slide"><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/3.jpg"/&gt;<br/>
+        &nbsp;&nbsp;&lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+
+    </code>
+
+    Now all you need is the following snippet to be implemented in your HTML-document:
+    <code>
+        &lt;script type="text/javascript"&gt;<br/>
+        &nbsp;&nbsp;$(document).ready(function () {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;$('.slideshow').squeezeGallery();<br/>
+        &nbsp;&nbsp;});<br/>
+        &lt;/script&gt;<br/>
+    </code>
+
+    <h3>3.2 Example with Teaser</h3>
+
+    <div class="slideshow-2">
+        <div class="slide">
+            <div class="teaser">
+                Lorem Ipsum dolor
+            </div>
+            <img src="images/1.jpg"/>
+        </div>
+        <div class="slide">
+            <div class="teaser">
+                Lorem Ipsum dolor
+            </div>
+            <img src="images/2.jpg"/>
+        </div>
+        <div class="slide">
+            <div class="teaser">
+                Lorem Ipsum dolor
+            </div>
+            <img src="images/3.jpg"/>
+        </div>
+        <div class="slide">
+            <div class="teaser">
+                Lorem Ipsum dolor
+            </div>
+            <img src="images/4.jpg"/>
+        </div>
+        <div class="slide">
+            <div class="teaser">
+                Lorem Ipsum dolor
+            </div>
+            <img src="images/5.jpg"/>
+        </div>
+    </div>
+
+    <h2>Options</h2>
+    The following options are provided.
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>slidesMaxRatio</td>
+            <td>0.618</td>
+            <td>Ratio of the expanded slide width to gallery width. Values from 0.1 to 0.9 are available.</td>
+        </tr>
+        <tr>
+            <td>sliderEasing</td>
+            <td>swing</td>
+            <td>Defines the easing method for slides. You may want to you use the jQuery easing plugin.</td>
+        </tr>
+        <tr>
+            <td>duration</td>
+            <td>500</td>
+            <td>Defines the duration of the slides-animation.</td>
+        </tr>
+        <tr>
+            <td>teaser</td>
+            <td>null</td>
+            <td>Define an element by class to animate some extra teaser text.</td>
+        </tr>
+        <tr>
+            <td>galleryWidth</td>
+            <td>null</td>
+            <td>Define a custom width for the gallery container, otherwise it will as big as its parent element.</td>
+        </tr>
+        <tr>
+            <td>galleryHeight</td>
+            <td>null</td>
+            <td>Define a custom height for the gallery, otherwise height will be defined by the smallest slide available.</td>
+        </tr>
+    </table>
+
+
+
+</div>
+
+</body>
+</html>

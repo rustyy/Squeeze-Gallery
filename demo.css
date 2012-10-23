@@ -1,0 +1,45 @@
+body {
+    background: #ededed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#page {
+    background: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    width: 900px;
+}
+
+h1 {
+
+}
+
+code {
+    background: #ededed;
+    display: block;
+    padding: 20px;
+}
+
+table {
+    border: 1px solid #ededed;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #ededed;
+    padding: 5px;
+}
+
+table tr:nth-child(2n) td {
+    background: #ededed;
+}
+
+/* Teaser css */
+.teaser {
+    background: #fff;
+    bottom: 10px;
+    left: 10px;
+    padding: 10px;
+}
