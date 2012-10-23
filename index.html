@@ -10,7 +10,7 @@
         $(document).ready(function () {
             $('.slideshow').squeezeGallery();
             $('.slideshow-2').squeezeGallery({
-                teaser: ".teaser"
+                teaser:".teaser"
             });
         });
 
@@ -21,19 +21,28 @@
 <body>
 
 <div id="page">
-
-
     <h1>Squeeze Gallery</h1>
 
+    <p>Current version: 0.2a</p>
+
+    <p>Squeeze Gallery is Dual licensed under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT</a>
+        and <a href="http://www.gnu.org/licenses/gpl.html">GPL</a> licenses.</p>
+
+
     <h2>1. Download jQuery</h2>
-    Download jQuery from <a href="http://jquery.com/download/">jQuery.com</a>
+
+    <p>Download jQuery from <a href="http://jquery.com/download/">jQuery.com</a></p>
 
     <h2>2. Download Squeeze Gallery</h2>
-    <a href="http://sg.rustyy.de/jquery.squeezegallery.tar.gz">Download Squeeze Gallery</a>
+
+    <p><a href="http://sg.rustyy.de/download/jquery.squeezegallery.tar.gz">Download Squeeze Gallery</a>.</p>
+
+    <p>Or get the latest snapshot from <a href="https://github.com/rustyy/Squeeze-Gallery">github</a></p>
 
     <h2>3. Examples</h2>
 
     <h3>3.1 Simple implementation</h3>
+
     <div class="slideshow">
         <div class="slide">
             <img src="images/1.jpg"/>
@@ -53,10 +62,11 @@
     </div>
 
     <h4>Description:</h4>
-    Simply wrap each slide to be shown with an element (e.g. div) an give it a class named "slide".
-    All slides need now to be wrapped with another HTML element with a class of your choice.
 
-    Your code may look like this:
+    <p>Simply wrap each slide to be shown with an element (e.g. div) an give it a class named "slide".
+        All slides need now to be wrapped with another HTML element with a class of your choice.</p>
+
+    <p>Your code may look like this:</p>
 
     <code>
         &lt;div class="slideshow"&gt;<br/>
@@ -73,7 +83,7 @@
 
     </code>
 
-    Now all you need is the following snippet to be implemented in your HTML-document:
+    <p>Now all you need is the following snippet to be implemented in your HTML-document:</p>
     <code>
         &lt;script type="text/javascript"&gt;<br/>
         &nbsp;&nbsp;$(document).ready(function () {<br/>
@@ -117,8 +127,49 @@
         </div>
     </div>
 
+
+    <p>HTML-Markup</p>
+    <code>
+        &lt;div class="slideshow"&gt;<br/>
+
+        &nbsp;&nbsp;&lt;div class="slide"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="teaser"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your text <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/1.jpg"/&gt;<br/>
+        &nbsp;&nbsp;&lt;/div&gt;<br/>
+
+        &nbsp;&nbsp;&lt;div class="slide"><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="teaser"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your text <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/2.jpg"/&gt;<br/>
+        &nbsp;&nbsp;&lt;/div&gt;<br/>
+
+        &nbsp;&nbsp;&lt;div class="slide"><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="teaser"&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your text <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/3.jpg"/&gt;<br/>
+        &nbsp;&nbsp;&lt;/div&gt;<br/>
+        &lt;/div&gt;<br/>
+
+    </code>
+
+    <p>JS:</p>
+    <code>
+        &lt;script type="text/javascript"&gt;<br/>
+        &nbsp;&nbsp;$(document).ready(function () {<br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;$('.slideshow').squeezeGallery({<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;teaser: '.teaser'<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;});<br/>
+        &nbsp;&nbsp;});<br/>
+        &lt;/script&gt;<br/>
+    </code>
+
     <h2>Options</h2>
-    The following options are provided.
+
+    <p>The following options are provided.</p>
     <table>
         <tr>
             <th>Name</th>
@@ -153,12 +204,11 @@
         <tr>
             <td>galleryHeight</td>
             <td>null</td>
-            <td>Define a custom height for the gallery, otherwise height will be defined by the smallest slide available.</td>
+            <td>Define a custom height for the gallery, otherwise height will be defined by the smallest slide
+                available.
+            </td>
         </tr>
     </table>
-
-
-
 </div>
 
 </body>
