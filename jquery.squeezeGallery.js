@@ -2,7 +2,7 @@
  * Squeeze Gallery - jQuery plugin showing up a image-gallery in accordion style.
  * @requires jQuery v1.4 or later
  *
- * Copyright (c) 2011 Felix Hofmann
+ * Copyright (c) 2012 Felix Hofmann
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
@@ -37,27 +37,10 @@
             // Initialization.
             var init;
             init = function () {
-                // Just init the gallery once,
-                // we need this due to possibility of multiple images.
-                if (initCount) {
-                    return false;
-                }
-
                 var galCss = {};
                 var galHeight, galWidth;
                 var slides = $('.slide', gallery);
                 var slidesAmount = slides.length;
-
-                var smallestSlide = function () {
-                    var h = 5000;
-
-                    $('img', slides).each(function () {
-                        if ($(this).height() <= h) {
-                            h = $(this).height();
-                        }
-                    });
-                    return h;
-                }
 
                 // Set gallery's width.
                 if (o.galleryWidth) {
@@ -72,7 +55,7 @@
                 }
                 // If not set by options, we calculate height by the smallest image.
                 else {
-                    galHeight = smallestSlide();
+                    galHeight = smallestSlide;
                 }
 
                 galCss = $.extend(galCss, {'width':galWidth + 'px', 'height':galHeight + 'px', 'overflow':'hidden', 'position':'relative'});
@@ -95,9 +78,9 @@
                 });
 
                 // Init teaser.
-                var teaserCss = {'position' : 'absolute', 'display' : 'none'};
+                var teaserCss = {'position':'absolute', 'display':'none'};
                 if (o.teaser) {
-                    $(o.teaser, gallery).each(function() {
+                    $(o.teaser, gallery).each(function () {
                         $(this).css(teaserCss);
                     });
                 }
@@ -193,12 +176,27 @@
 
                 // Add css to gallery-container.
                 gallery.css(galCss);
-                // Gallery has been initialized, so initCount set to 1.
-                initCount = 1;
             };
-            // If gallery contains images, we are waiting until they are fully loaded.
+
+            // If gallery contains images, we are getting the real height and set the smallest slide.
             if (gallery.find('img')) {
-                $('img', gallery).load(init());
+                var imgCount = $('img', gallery).length;
+                var smallestSlide = 5000;
+                $('img', gallery).each(function (i) {
+                    var img = $(this);
+                    var picWidth, picHeight;
+                    $('<img/>')
+                        .attr('src', $(img).attr('src'))
+                        .load(function () {
+                            realPicHeight = this.height;
+                            if (realPicHeight <= smallestSlide) {
+                                smallestSlide = realPicHeight;
+                            }
+                            if (i === imgCount - 1) {
+                                init();
+                            }
+                        });
+                });
             }
             // Otherwise we go ahead.
             else {
